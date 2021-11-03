@@ -1,0 +1,60 @@
+/* Q1 */
+SELECT * FROM B_CUSTOMERS;
+
+/* Q2 */
+SELECT customer_id, customer_name, city, cust_state, country, balance, credit_limit
+FROM B_CUSTOMERS bc;
+
+/* Q3 */
+SELECT customer_name, credit_limit, balance
+FROM B_CUSTOMERS;
+
+/* Q4 */
+SELECT customer_name, balance, credit_limit
+FROM B_CUSTOMERS;
+
+/* Q5 */
+SELECT CUSTOMER_NAME 
+FROM B_CUSTOMERS;
+
+/* Q6 */
+SELECT CUSTOMER_NAME, CREDIT_LIMIT*1.12
+FROM B_CUSTOMERS;
+
+/* Q7 */
+SELECT CUSTOMER_NAME AS "Customer Name", CITY AS "City"
+FROM B_CUSTOMERS;
+
+/* Q8 */
+SELECT CUSTOMER_NAME, CREDIT_LIMIT AS "OLD_CREDIT_LIMIT", CREDIT_LIMIT*1.12 AS "NEW_CREDIT_LIMIT"
+FROM B_CUSTOMERS;
+
+/* Q9 */
+SELECT CUSTOMER_ID AS "Customer", CUSTOMER_NAME AS "Customer Name", CREDIT_LIMIT - BALANCE AS "Available Credit"
+FROM B_CUSTOMERS;
+
+/* Q10 */
+SELECT CUSTOMER_NAME, CITY || CUST_STATE || COUNTRY 
+FROM B_CUSTOMERS;
+
+/* Q11 */
+SELECT CUSTOMER_NAME, CITY || ', ' || CUST_STATE  || '   ' || COUNTRY 
+FROM B_CUSTOMERS;
+
+/* Q12 */
+SELECT CUSTOMER_NAME || ' has a balance of ' || BALANCE AS "Customer Balance"
+FROM B_CUSTOMERS;
+
+/* Q13 */
+SELECT 'Customer ' || CUSTOMER_ID || ' is located in ' || CITY || ', ' || CUST_STATE 
+FROM B_CUSTOMERS;
+
+/* Q14 */
+SELECT CUSTOMER_NAME 
+FROM B_CUSTOMERS; 
+/* 21 listed */
+
+/* Q15 */
+SELECT DISTINCT CUSTOMER_NAME 
+FROM B_CUSTOMERS; 
+/* 14 listed */
