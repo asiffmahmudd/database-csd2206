@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="http://12.42.204.30:7005/jTable/jquery.jtable.js"></script>
+<script src="http://12.42.204.30:7005/jTable/helpers.js"></script>
+<link href="http://12.42.204.30:7005/jTable/themes/lightcolor/red/jtable.css" rel="stylesheet"> 
+
+                                                <!-- Do not change the code above -->
+
+<link href="cars_css/cars.css" rel="stylesheet"> <!-- Modify myStyles.css to add additional styles or add your own stylesheet-->
+
+
+<title>Cars by Dealer</title>   <!-- Modify title for your application -->
+
+<script>
+	$(document).ready(function() {
+		$('#container1').jtable({
+			title : 'Car Listing by Dealer',  <!-- Change title for the output -->
+			paging : true,                    <!-- "true" allows paging through the grid -->
+			pageSize : 11,                    <!-- Specify page size -->
+			sorting : true,                   <!-- "true" allows sorting by columns -->
+			defaultSorting : 'dealer_city',   <!-- Default sort column(s) on initial load -->
+			actions : {
+				listAction : 'genJson2.aspx?jtView=carsV2'  <!-- Change "carsV2" to your view name -->
+			},
+			fields : {                        <!-- Modify the grid components -->
+				dealer_city : {
+					title : 'City',
+					width : '10%',
+					list : true
+				},
+				dealer_name : {
+					title : 'Dealer',
+					width : '20%',
+					list : true
+				},
+				car_make : {
+					title : 'Car make',
+					width : '10%',
+					list : true
+				},
+				car_model : {
+					title : 'Car model',
+					width : '10%',
+					list : true
+				},
+				model_year : {
+					title : 'Year',
+					width : '5%',
+					list : true
+				},
+				color : {
+					title : 'Color',
+					width : '10%',
+					list : true,
+				},
+				odometer : {
+					title : 'Odometer',
+					width : '5%',
+					list : true,
+				},
+				cost_price : {
+					title : 'Cost price',
+					width : '10%',
+					list : true,
+					display : function(data) {
+						return formatCurrency(data.record.cost_price)
+					}
+				},
+				previous_owner : {
+					title : 'Previous owner',
+					width : '20%',
+					list : true,
+				}
+			}
+		});
+		$('#container1').jtable('load');
+	});
+</script>
+</head>
+
+<body>
+	<div id="container1" style="width: 90%;"></div>
+</body>
+</html>
